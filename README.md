@@ -1,6 +1,4 @@
 ---
-
-```markdown
 # 🧠 SIMD-Optimized Edge Detection using OpenCL and C++
 
 This project implements a high-performance 2D convolution on grayscale images using both a scalar C++ baseline and a parallelized OpenCL version. The goal is to compare performance between scalar CPU execution and SIMD-accelerated GPU/CPU execution using OpenCL.
@@ -41,8 +39,6 @@ This kernel detects vertical changes in intensity by computing the difference be
 | `Q1_Scalar.cpp`    | Scalar baseline version using C++ only           |
 | `Q1_OpenCL.cpp`    | OpenCL-enabled version with SIMD optimizations   |
 | `main_Kernel.cl`   | OpenCL kernel code (`float4` vectorized)         |
-| `input.pgm`        | Optional PGM grayscale input image               |
-| `output_*.pgm`     | Output images for visual inspection              |
 
 ---
 
