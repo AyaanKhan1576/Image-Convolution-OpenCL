@@ -1,5 +1,5 @@
 ---
-# 🧠 SIMD-Optimized Edge Detection using OpenCL and C++
+# SIMD-Optimized Edge Detection using OpenCL and C++
 
 This project implements a high-performance 2D convolution on grayscale images using both a scalar C++ baseline and a parallelized OpenCL version. The goal is to compare performance between scalar CPU execution and SIMD-accelerated GPU/CPU execution using OpenCL.
 
@@ -7,18 +7,18 @@ It supports input from real grayscale images (`.pgm`) or generates synthetic ima
 
 ---
 
-## 📌 Features
+## Features
 
-- ✅ Vertical edge detection using a 3×3 kernel
-- ✅ Scalar C++ baseline for performance comparison
-- ✅ OpenCL version with SIMD-style vectorization (`float4`)
-- ✅ Supports both CPU and GPU OpenCL devices
-- ✅ PGM image input/output (compatible with GIMP, IrfanView, OpenCV)
-- ✅ Benchmark-ready with execution time measurement
+- Vertical edge detection using a 3×3 kernel
+- Scalar C++ baseline for performance comparison
+- OpenCL version with SIMD-style vectorization (`float4`)
+- Supports both CPU and GPU OpenCL devices
+- PGM image input/output (compatible with GIMP, IrfanView, OpenCV)
+- Benchmark-ready with execution time measurement
 
 ---
 
-## 🔍 Convolution Kernel
+## Convolution Kernel
 
 The project uses a vertical edge detection kernel:
 
@@ -32,7 +32,7 @@ This kernel detects vertical changes in intensity by computing the difference be
 
 ---
 
-## 📂 File Structure
+## File Structure
 
 | File               | Description                                      |
 |--------------------|--------------------------------------------------|
@@ -42,21 +42,21 @@ This kernel detects vertical changes in intensity by computing the difference be
 
 ---
 
-## ⚙️ Build Instructions
+## ⚙Build Instructions
 
-### 🛠️ Prerequisites
+### 🛠Prerequisites
 
 - **MSYS2** or another GCC-compatible terminal
 - **NVIDIA CUDA Toolkit** (for OpenCL headers/libraries)
 - An OpenCL-capable **GPU or CPU**
 
-### 🧱 Scalar Version
+### Scalar Version
 
 ```bash
 g++ -o Q1_Scalar Q1_Scalar.cpp
 ```
 
-### ⚡ OpenCL Version
+### OpenCL Version
 
 ```bash
 g++ Q1_OpenCL.cpp -o Q1_OpenCL ^
@@ -65,13 +65,13 @@ g++ Q1_OpenCL.cpp -o Q1_OpenCL ^
   -lOpenCL
 ```
 
-> ⚠️ Replace the paths above if your CUDA Toolkit is installed in a different location.
+> Replace the paths above if your CUDA Toolkit is installed in a different location.
 
 ---
 
-## ▶️ How to Run
+## How to Run
 
-### 🧮 Scalar Version
+### Scalar Version
 
 ```bash
 ./Q1_Scalar
@@ -83,7 +83,7 @@ g++ Q1_OpenCL.cpp -o Q1_OpenCL ^
 
 ---
 
-### ⚙️ OpenCL Version
+### OpenCL Version
 
 ```bash
 ./Q1_OpenCL
@@ -97,7 +97,7 @@ g++ Q1_OpenCL.cpp -o Q1_OpenCL ^
 
 ---
 
-## 📊 Performance Results
+## Performance Results
 
 | Image Size | Input Type | Scalar Time | OpenCL (CPU) | OpenCL (GPU) | Speedup (GPU vs Scalar) |
 |------------|------------|-------------|---------------|---------------|--------------------------|
@@ -110,7 +110,7 @@ g++ Q1_OpenCL.cpp -o Q1_OpenCL ^
 
 ---
 
-## 💡 SIMD Optimizations in OpenCL
+## SIMD Optimizations in OpenCL
 
 - Used `float4` to group 3 vertically adjacent pixels from each side (left/right)
 - Vector subtraction and dot product for fast sum computation:
@@ -123,7 +123,7 @@ g++ Q1_OpenCL.cpp -o Q1_OpenCL ^
 
 ---
 
-## 🚧 Challenges Faced
+## Challenges Faced
 
 - GPU overhead for small images led to slower performance vs CPU
 - Manual device selection was implemented for flexibility
@@ -131,27 +131,12 @@ g++ Q1_OpenCL.cpp -o Q1_OpenCL ^
 
 ---
 
-## 📸 Output Visualization
+## Output Visualization
 
 - Open output `.pgm` files using:
   - GIMP
   - IrfanView
   - OpenCV (Python/C++)
   - VSCode with PGM viewer plugin
-
----
-
-## 🧠 Author
-
-**Ayaan Khan**  
-*Computer Science Undergraduate | FAST NUCES*  
-[GitHub](https://github.com/AyaanKhan1576)
-
----
-
-## 🪪 License
-
-This project is licensed under the **MIT License**.
-```
 
 ---
